@@ -1,8 +1,8 @@
 # 🤖 RAG-Powered Document Q&A System
 
-![GitHub Repo stars](https://img.shields.io/github/stars/kirteeshsingh/RAG-Powered-Document-Q-A-System?style=social)
-![GitHub forks](https://img.shields.io/github/forks/kirteeshsingh/RAG-Powered-Document-Q-A-System?style=social)
-![License](https://img.shields.io/github/license/kirteeshsingh/RAG-Powered-Document-Q-A-System)
+![GitHub Repo stars](https://img.shields.io/github/stars/kirteeshsingh/RAG-Powered-Document-QA-SYSTEM?style=social)
+![GitHub forks](https://img.shields.io/github/forks/kirteeshsingh/RAG-Powered-Document-QA-SYSTEM?style=social)
+![License](https://img.shields.io/github/license/kirteeshsingh/RAG-Powered-Document-QA-SYSTEM)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 
 ---
@@ -46,6 +46,7 @@ J --> K[Final Answer to User]
 ## 🛠️ Tech Stack
 
 * **Backend:** Python
+* **UI:** Streamlit
 * **LLM & Embeddings:** Cohere
 * **Vector Database:** Pinecone
 
@@ -56,8 +57,8 @@ J --> K[Final Answer to User]
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/kirteeshsingh/RAG-Powered-Document-Q-A-System
-cd RAG-Powered-Document-Q-A-System
+git clone https://github.com/kirteeshsingh/RAG-Powered-Document-QA-SYSTEM
+cd RAG-Powered-Document-QA-SYSTEM
 ```
 
 ---
@@ -93,15 +94,14 @@ pip install -r requirements.txt
 * Cohere → [https://cohere.com](https://cohere.com)
 * Pinecone → [https://www.pinecone.io](https://www.pinecone.io)
 
-Configure these in your application.
+Both keys are entered in the app sidebar while the app is running. No .env file is required.
 
 ---
 
 ### 5️⃣ Run the App
 
 ```bash
-cd src
-python app.py
+streamlit run src/app.py
 ```
 
 ---
@@ -110,15 +110,34 @@ python app.py
 
 ```bash
 .
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── src/
 │   ├── app.py
 │   ├── vectorstore.py
-│   ├── chatbot.py
-│
+│   └── chatbot.py
+├── tests/
+│   ├── test_vectorstore.py
+│   └── test_chatbot.py
 ├── requirements.txt
+├── requirements-dev.txt
 ├── README.md
 └── LICENSE
 ```
+
+---
+
+## 🧪 Testing
+
+Unit tests cover PDF text extraction, chunking, embedding batching, retrieval with reranking, and the chatbot response flow. All external API calls are mocked, so no API keys are needed.
+
+```bash
+pip install -r requirements-dev.txt
+pytest tests/ -v
+```
+
+Tests also run automatically in GitHub Actions on every push and pull request.
 
 ---
 
@@ -153,7 +172,7 @@ Apache License
 ## 👨‍💻 Author
 
 **Kirteesh Akhil Singh**
-B.Tech CSE | DevOps Enthusiast
+B.Tech CSE | AI Engineer
 
 ---
 
