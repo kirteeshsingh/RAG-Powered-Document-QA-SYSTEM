@@ -60,7 +60,7 @@ class VectorStore:
         if index_name not in pc.list_indexes().names():
             pc.create_index(
                 name=index_name,
-                dimension=len(self.docs_embs[0]),
+                dimension=len(self.embeddings[0]),
                 metric='cosine',
                 spec=ServerlessSpec(
                     cloud='aws',
